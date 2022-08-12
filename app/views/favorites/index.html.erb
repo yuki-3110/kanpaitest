@@ -1,0 +1,31 @@
+<div class="container text-center">
+  <div class="container" style="width: 500px;">
+
+    <% @favorite.each do |favorite| %>
+      <div class="card mt-5" style="width: 30rem;">
+        <div class="card-body" >
+          <br>
+          <%= favorite.picture.user.name %>
+          <br>
+          <%= favorite.picture.genre %>
+          <br>
+          <%= favorite.picture.content %>
+          <br>
+          <%= image_tag favorite.picture.image.url if favorite.picture.image? %>
+        </div>
+      </div>
+    <% end %>
+
+    <br>
+    <div class="picture index mt-5">
+      <br>
+      <%= link_to 'マイページ', user_path(current_user.id) %>
+      <br>
+      <%= link_to 'みんなの投稿を見る', pictures_path %>
+    </div>
+
+  </div>
+</div>
+
+
+

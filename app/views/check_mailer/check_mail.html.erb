@@ -1,0 +1,5 @@
+<h4>投稿が完了しました！投稿内容のご確認をお願いします</h4>
+
+<p>ジャンル: <%= @picture.genre %></p>
+<p>内容: <%= @picture.content %></p>
+<%= image_tag @picture.image.url, size: '300x300' if @picture.image? %>

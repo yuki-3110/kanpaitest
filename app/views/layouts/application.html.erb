@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kanpai</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #000000;">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white">\カンパイや/🍻</a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="searc/assets/sample-0bfa13b12a5225a89c9b7535f44652820694987cd6dabc74478855cfc0e6e7d2.jpgh" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <%= image_tag 'sample.jpg', width: '100%', height: '500' %>      
+    </div>
+
+    <% flash.each do |key,value| %>
+      <%= content_tag(:div,value,class: "#{key}" "container text-center mt-5") %>
+    <% end %>
+    <%= yield %>
+
+    <br>
+    <footer class="container-fluid mt-4 text-center d-none d-sm-block text-white" style="background-color: #000000;">
+      <div class="container p-2">© 2022 好きなお酒をシェアするサイト</div>
+    </footer>
+
+  </body>
+</html>

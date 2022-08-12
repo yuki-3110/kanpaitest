@@ -1,0 +1,34 @@
+<div class="container text-center">
+
+  <div class="mx-auto" style="width: 500px;">
+    <% if @user.image? %>
+      <div class="user_icon align-center mt-5">
+        <%= image_tag @user.image.url, size: '100x100' %>
+      </div>
+    <% else %>
+      <div class="icon align-center mt-5">
+        <%= image_tag 'icon.png', size: '100x100' %>
+      </div>
+    <% end %>
+
+    <br>
+    <h4><%= @user.name %>のページ</h4>
+    <h6>プロフィール</h6>
+    <%= @user.introduce %>
+  </div>
+
+  <div class="picture index mt-5">
+    <% if @user == current_user %>
+      <%= link_to 'プロフィールを編集する', edit_user_path(@user) %>
+    <% else %>
+      <td></td>
+    <% end %>
+    <br>
+    <%= link_to 'お気に入り投稿一覧', favorites_path %>    
+    <br>
+    <%= link_to 'みんなの投稿を見る', pictures_path %>
+    <br>
+    <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+  </div>
+
+</div>

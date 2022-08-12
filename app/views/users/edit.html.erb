@@ -1,0 +1,25 @@
+<div class="container text-center">
+
+  <%= form_with(model:@user, url:user_path, local:true) do |f| %>
+    <div class="mx-auto mt-3" style="width: 500px;">
+      <%= f.label :プロフィール編集 %>
+      <%= f.text_area :introduce, class: 'form-control' %>
+      <br>
+      <%= f.label :プロフィール画像 %>
+      <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
+      <%= f.file_field :image, class: 'form-control' %>
+      <%= f.hidden_field :image_cache %>
+      <br>
+      <%= f.submit "編集する", class: 'btn btn-dark btn-sm' %>
+    </div>   
+  <% end %>
+
+  <div class="picture index mt-5">
+    <%= link_to 'プロフィール画面に戻る', user_path %>
+    <br>
+    <%= link_to 'みんなの投稿を見る', pictures_path %>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,19 @@
+<div class="container text-center">
+  <br>
+  <h4>カンパイや</h4>
+  <h6>好きなお酒を投稿して、みんなでカンパイしよう！🥂</h6>
+  <h6>ログインには以下のご入力が必要です。</h6>
+
+  <br>
+  <%= form_with(scope: :session, url:sessions_path, local:true) do |f| %>
+    <div class="mx-auto" style="width: 500px;">
+      <%= f.label :メールアドレス %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :パスワード %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <br>
+      <%= f.submit "ログイン", class: 'btn btn-dark btn-sm' %>
+    </div>   
+  <% end %>
+
+</div>
