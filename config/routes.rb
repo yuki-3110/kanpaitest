@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'users#new'
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  # mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
   resources :checks
   resources :users, only: %i(new create show edit update)
   resources :sessions, only: %i(new create destroy)
